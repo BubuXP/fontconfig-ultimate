@@ -1,0 +1,18 @@
+conf.d/README.infinality
+
+If you are using fontconfig-infinality-ultimate from the infinality-deb
+github repo, templates are located in /usr/share/fontconfig/infinality and they
+are symlinked here instead. Besides, there are three more subdirectories
+located in the main template directory, each containing collection-specific
+fontconfig configuration files:
+
+           /etc/fonts/infinality/combi - for a custom, user-compiled collection
+ /usr/share/fontconfig/infinality/free - for the free font collection (default)
+   /usr/share/fontconfig/infinality/ms - for the proprietary font collection
+                                         available with Microsoft Windows and
+                                         Office software (not freely available)
+
+Symbolic links in conf.d to all five *.conf files from one of either 'combi',
+'free' or 'ms' need to be created in order for default aliases and font
+substitution rules to work properly. The 'free' profile is enabled by default,
+but you can use the command "fc-presets set" (as root) to change the profile.
