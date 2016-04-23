@@ -13,8 +13,8 @@ GRE='\E[01;32m'
 YEL='\E[01;33m'
 RES='\E[0m'
 
-presets_dir="/usr/share/fontconfig/infinality"
-config_dir="/etc/fonts/conf.d"
+presets_dir="/usr/share/fontconfig/infinality.avail"
+config_dir="/etc/fonts/infinality.d"
 
 presets_list=(combi free ms)
 options=(combi free ms reset quit)
