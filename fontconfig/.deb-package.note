@@ -1,3 +1,10 @@
+TODO:
+- modify fc-presets because 'combi/' is in another directory, different from
+  the one where 'ms' and 'free' are.
+
+
+
+INFO:
 This fonts.conf will replace the original fonts.conf when fontconfig-infinality
 deb package will be installed.
 * the original fonts.conf will be backed up and the new one won't be overwrited
