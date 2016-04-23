@@ -1,8 +1,11 @@
 TODO:
 - modify fc-presets because 'combi/' is in another directory, different from
   the one where 'ms' and 'free' are.
+  DONE - NEED TESTING
+
 - learn if there is a way to track bohoomil's original repo when he updates
   the files you are using here.
+  TRIED - NO SUCCESS, ONLY MANUAL FOR NOW
 
 
 
@@ -34,7 +37,7 @@ The new fonts.conf will cause a series of changes.
   for compliants with other directory names changes and to not mix old
   fontconfig settings with the new infinality ones
 
-* emove symlink from
+* remove symlink from
   /usr/share/fontconfig/infinality.avail/29-local.conf to stop using
   /etc/fonts/local.conf and to preserve it from being changed or removed for
   use with Infinality, and because we can already change the files in
