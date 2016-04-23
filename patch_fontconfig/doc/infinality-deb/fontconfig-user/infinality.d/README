@@ -1,0 +1,8 @@
+In order to make applications honor your custom settings, create
+a symlink from '~/.config/fontconfig/infinality.avail/nn-foo.conf'
+to '~/.config/fontconfig/infinality.d'
+
+e.g.:
+
+  $ cd ~/.fontconfig/infinality.avail/
+  $ ln -f -s 60-latin.conf ../infinality.d/
