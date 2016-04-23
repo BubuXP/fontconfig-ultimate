@@ -1,0 +1,31 @@
+This fonts.conf will replace the original fonts.conf when fontconfig-infinality
+deb package will be installed.
+* the original fonts.conf will be backed up and the new one won't be overwrited
+  by regular fontconfig updates but only by fontconfig-infinality updates,
+  thanks to 'dpkg-divert' used in deb maintainer scripts
+
+The new fonts.conf will cause a series of changes.
+* the new fonts.conf will render inactive /etc/fonts/conf.d/ (so no removes, no
+  changes, no need to backup) and will be replaced by /etc/fonts/infinality.d/
+
+* customize/ will be installed as /etc/fonts/infinality.avail/
+* readonly/ will be installed as /usr/share/fontconfig/infinality.avail/
+* symlinks from the .conf files in these directory will be created in the new
+  directory /etc/fonts/infinality.d/
+
+* symlink from /usr/share/fontconfig/conf.avail/49-sansserif.conf must be
+  created in /etc/fonts/infinality.d/
+* optionally (but really not used) a symlink could be also created from
+  /usr/share/fontconfig/conf.avail/10-scale-bitmap-fonts.conf
+
+* probably I will modify 28-user.conf to change
+  ~/.config/fontconfig/conf.d/ to ~/.config/fontconfig/infinality.d and
+  ~/.config/fontconfig/fonts.conf to ~/.config/fontconfig/infinality.conf
+  for compliants with other directory names changes and to not mix old fontconfig
+  settings with the new infinality ones
+
+* probably I will remove symlink from
+  /usr/share/fontconfig/infinality.avail/29-local.conf to stop using
+  /etc/fonts/local.conf and to preserve it from being changed or removed for
+  use with Infinality, and because we can already change the files in
+  /usr/share/fontconfig/infinality.avail/ and in user's home to customize
