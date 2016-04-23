@@ -14,7 +14,9 @@ YEL='\E[01;33m'
 RES='\E[0m'
 
 presets_dir="/usr/share/fontconfig/infinality.avail"
+customs_dir="/etc/fonts/infinality.avail"
 config_dir="/etc/fonts/infinality.d"
+
 
 presets_list=(combi free ms)
 options=(combi free ms reset quit)
@@ -111,7 +113,7 @@ check_current(){
         echo -e "$line$GRE is OK$RES"
       else
         echo -e "$line$RED is NOT OK$RES"
-        echo -e " $YEL:: Run <fc-presets help> for more information.$RES"
+        echo -e "$YEL:: Run <fc-presets help> for more information.$RES"
       fi
       (( i++ ))
       done
@@ -135,12 +137,24 @@ check_current_prejob(){
   popd >/dev/null
 }
 
+# Created fod infinality-deb
+customs_check_prejob(){
+  pushd $customs_dir >/dev/null
+  preset_selected=$(ls "$option"/*\-$option.conf | wc -w)
+  if [ $preset_selected -lt 5 ]; then
+      echo -e 'Target not found. Did you set up'
+      echo -e 'fontconfig-infinality correctly?'
+      exit 1
+    fi
+  popd >/dev/null
+}
+
 targets_check_prejob(){
   pushd $presets_dir >/dev/null
   preset_selected=$(ls "$option"/*\-$option.conf | wc -w)
   if [ $preset_selected -lt 5 ]; then
       echo -e 'Target not found. Did you set up'
-      echo -e 'fontconfig-infinality-ultimate correctly?'
+      echo -e 'fontconfig-infinality correctly?'
       exit 1
     fi
   popd >/dev/null
@@ -175,7 +189,12 @@ fc_set(){
     else
       preset=$option
       # create new
-      targets_list=$(ls $presets_dir/$preset/*.conf)
+      # following 'if' is created for infinality-deb
+      if [[ $option == combi ]]
+        targets_list=$(ls $customs_dir/$preset/*.conf)
+      else
+        targets_list=$(ls $presets_dir/$preset/*.conf)
+      fi
       for target in ${targets_list[@]}; do
         ln -sf $target $config_dir
       done
@@ -193,7 +212,7 @@ custom_postjob(){
       rm -f 35-repl-custom.conf 2>/dev/null
     elif [[ $check_current == *free* ]] || [[ $check_current == *ms* ]]; then
       if [ ! -f 35-repl-custom ]; then
-        ln -s $presets_dir/35-repl-custom.conf $config_dir 2>/dev/null
+        ln -s $customs_dir/35-repl-custom.conf $config_dir 2>/dev/null
       fi
     fi
   done
@@ -208,7 +227,7 @@ set_preset(){
         echo ' [ combi ] preset chosen...'
         option='combi'
         check_current_prejob
-        targets_check_prejob
+        customs_check_prejob
         fc_reset
         fc_set
         custom_postjob
@@ -278,4 +297,3 @@ case $option in
     howto
     ;;
 esac
-
