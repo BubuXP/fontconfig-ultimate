@@ -137,7 +137,7 @@ check_current_prejob(){
   popd >/dev/null
 }
 
-# Created fod infinality-deb
+# function created for infinality-deb
 customs_check_prejob(){
   pushd $customs_dir >/dev/null
   preset_selected=$(ls "$option"/*\-$option.conf | wc -w)
