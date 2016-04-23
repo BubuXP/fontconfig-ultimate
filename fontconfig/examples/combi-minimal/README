@@ -1,4 +1,4 @@
-A minimal `custom` preset.
+A minimal 'custom' preset.
 
 Features:
 
@@ -10,5 +10,4 @@ Features:
 
 To activate the preset, copy all files to
 
-  /etc/fonts/conf.avail.infinality/combi
-
+  /etc/fonts/infinality.avail/combi
