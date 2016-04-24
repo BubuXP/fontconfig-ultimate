@@ -29,12 +29,13 @@ For more information, see:
 * At the moment, there are two font collections supported by `fontconfig-infinality` out of the box: a free one (activated by default, installed by dependencies of the `fontconfig-infinality` package), and a proprietary one (Microsoft's fonts supplied with MS Windows and MS Office). If you want to switch between them, use `fc-presets` script. There is also a `custom` preset available for highly customized font collections. Configuration files for the customizable presets are located in `/etc/fonts/infinality.avail/`.
 
 * If you are using a desktop environment (KDE, GNOME, etc.) that lets you adjust font settings on its own, you should duplicate the base values as found in `/etc/X11/Xsession/99infinality-settings`, and they are:
-  Antialias:   1 (enabled)
-  Autohint:    0 (disabled)
-  DPI:         96
-  Hinting:     1 (enabled)
+   Antialias:  1 (enabled)
+    Autohint:  0 (disabled)
+         DPI:  96
+     Hinting:  1 (enabled)
   Hint style:  hintfull (full)
   LCD filter:  lcddefault (default)
+   Sub-pixel:  rgb
 
 ___
 
