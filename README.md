@@ -8,17 +8,11 @@ Project website: [bohoomil.com](http://bohoomil.com "bohoomil.com")
 
 #### Quick installation instructions
 
-**I. If you are an Arch Linux user, or if you are using one of the Arch Linux derivatives,** you may want to use pre-compiled packages from the `[infinality-bundle]` repository bohoomil maintain. This is a recommended approach in a majority of cases as it gives access to the entire functionality offered by Infinality patches and the ultimate configuration without a typical post installation routine.
+**I. If you are using Debian, Ubuntu, or derivatives,** you can try installing the precompiled packages from my [Google Drive](https://drive.google.com/open?id=0B7AdLMiZn4FzdGZNV2FpLWhPTkk) or, if the packages are incompatible, you can rebuild them for your distro version by yourself, using the deb sources there (soon will be ported here).
 
-For more information, see:
+**II. If you are an Arch Linux user, or if you are using one of the Arch Linux derivatives,** go to the project homepage or [in the original GitHub page](https://github.com/bohoomil/fontconfig-ultimate) for more informations.
 
-* [Infinality-bundle+fonts](https://wiki.archlinux.org/index.php/Infinality-bundle+fonts) (install notes, troubleshooting)
-* [infinality-bundle: good looking fonts made (even) easier](https://bbs.archlinux.org/viewtopic.php?id=162098) (official infinality-bundle support thread for Arch Linux users)
-* [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) (official infinality-bundle-fonts support thread)
-
-**II. If you are using Debian, Ubuntu, or derivatives,** you can install the precompiled packages from $URL or, if the packages are incompatible, you can rebuild them for your distro version by yourself, using the deb sources.
-
-**III. If you are using any other Linux distribution,** you can use all available resources here or in the original bohoomil github to rebuild the `fontconfig-infinality` package available in your distribution.
+**III. If you are using any other Linux distribution,** you can use all available resources you can found here or [in the original GitHub page](https://github.com/bohoomil/fontconfig-ultimate) to rebuild a modified `fontconfig` package, or making a new `fontconfig-infinality` that could work without modifying your distro's original `fontconfig` package.
 
 
 
