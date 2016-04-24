@@ -42,6 +42,7 @@ The new fonts.conf will cause a series of changes.
 
 * remove symlink from
   /usr/share/fontconfig/infinality.avail/29-local.conf to stop using
-  /etc/fonts/local.conf so we'll preserve it from being changed or removed
-  for use with Infinality, and because we can already change the .confs in
-  /etc/fonts/infinality.avail/ and in user's home to customize Infinality
+  /etc/fonts/local.conf so, if already present, we'll preserve it from being
+  removed or modified for use with Infinality. And because we can already
+  change the .confs in /etc/fonts/infinality.avail/ and in user's home to
+  customize Infinality settings.
