@@ -1,4 +1,6 @@
 TODO:
+- improve documentation.
+
 - modify fc-presets because 'combi/' is in another directory, different from
   the one where 'ms' and 'free' are.
   DONE - NEED TESTING
@@ -7,7 +9,7 @@ TODO:
   the files you are using here.
   TRIED - NO SUCCESS, ONLY MANUAL FOR NOW
 
-- improve documentation.
+
 
 
 INFO:
@@ -18,14 +20,14 @@ deb package will be installed.
   thanks to 'dpkg-divert' used in deb maintainer scripts
 
 The new fonts.conf will cause a series of changes.
-* the new fonts.conf will render inactive /etc/fonts/conf.d/ (so no removes, no
+* the new fonts.conf will render inactive /etc/fonts/conf.d/ (no deleting, no
   changes, no need to backup) and will be replaced by /etc/fonts/infinality.d/
 
 * customize/ will be installed as /etc/fonts/infinality.avail/
 * readonly/ will be installed as /usr/share/fontconfig/infinality.avail/
 * symlinks from the .conf files in these directory will be created in the new
   directory /etc/fonts/infinality.d/ (not all, some files are yes/no versions
-  of the same feature).
+  of the same feature, check the Arch build script and package for a list).
 
 * symlink from /usr/share/fontconfig/conf.avail/49-sansserif.conf must be
   created in /etc/fonts/infinality.d/
@@ -40,6 +42,6 @@ The new fonts.conf will cause a series of changes.
 
 * remove symlink from
   /usr/share/fontconfig/infinality.avail/29-local.conf to stop using
-  /etc/fonts/local.conf and to preserve it from being changed or removed for
-  use with Infinality, and because we can already change the files in
-  /usr/share/fontconfig/infinality.avail/ and in user's home to customize
+  /etc/fonts/local.conf so we'll preserve it from being changed or removed
+  for use with Infinality, and because we can already change the .confs in
+  /etc/fonts/infinality.avail/ and in user's home to customize Infinality
