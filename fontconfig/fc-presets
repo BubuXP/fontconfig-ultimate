@@ -17,7 +17,6 @@ presets_dir="/usr/share/fontconfig/infinality.avail"
 customs_dir="/etc/fonts/infinality.avail"
 config_dir="/etc/fonts/infinality.d"
 
-
 presets_list=(combi free ms)
 options=(combi free ms reset quit)
 
@@ -183,8 +182,10 @@ fc_set(){
       preset=$option
       # create new
       # the following 'if' has been created for infinality-deb
+      # Debian policy chapter 10.5 says that symlinks within a
+      # top-level directory should be relative.
       if [[ $preset = combi ]]; then
-        targets_list=$(ls $customs_dir/$preset/*.conf)
+        targets_list=$(ls ../infinality.avail/$preset/*.conf)
       else
         targets_list=$(ls $presets_dir/$preset/*.conf)
       fi
@@ -205,7 +206,9 @@ custom_postjob(){
       rm -f 35-repl-custom.conf 2>/dev/null
     elif [[ $check_current == *free* ]] || [[ $check_current == *ms* ]]; then
       if [ ! -f 35-repl-custom ]; then
-        ln -s $customs_dir/35-repl-custom.conf $config_dir 2>/dev/null
+        # Debian policy chapter 10.5 says that symlinks within a
+        # top-level directory should be relative.
+        ln -s ../infinality.avail/35-repl-custom.conf . 2>/dev/null
       fi
     fi
   done
