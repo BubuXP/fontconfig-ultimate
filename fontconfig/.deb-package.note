@@ -3,7 +3,10 @@ TODO:
 
 - modify fc-presets because 'combi/' is in another directory, different from
   the one where 'ms' and 'free' are.
-  DONE - NEED TESTING
+  DONE - NEED TESTING > TESTING DONE, EVERYTHING LOOKS FINE
+  Next step: refining
+  - porting from bash to dash
+  - better handling of 35-repl-custom
 
 - learn if there is a way to track bohoomil's original repo when he updates
   the files you are using here.
@@ -16,8 +19,11 @@ INFO:
 This fonts.conf will replace the original fonts.conf when fontconfig-infinality
 deb package will be installed.
 * the original fonts.conf will be backed up and the new one won't be overwrited
-  by regular fontconfig updates but only by fontconfig-infinality updates,
-  thanks to 'dpkg-divert' used in deb maintainer scripts
+  by regular fontconfig updates from Debian, but only by fontconfig-infinality
+  updates, thanks to 'dpkg-divert' used in deb maintainer scripts and the fact
+  that the new fonts.conf will be a symlink to the real file, that is
+  /usr/share/fontconfig/infinality.conf (we don't replace the file directly
+  because dpkg-divert doesn't work well with conffiles, causing errors.
 
 The new fonts.conf will cause a series of changes.
 * the new fonts.conf will render inactive /etc/fonts/conf.d/ (no deleting, no
