@@ -8,9 +8,9 @@ Project website: [bohoomil.com](http://bohoomil.com "bohoomil.com")
 
 #### Quick installation instructions
 
-**I. If you are using Debian, Ubuntu, or derivatives,** you can try installing the precompiled packages from my [Google Drive](https://drive.google.com/open?id=0B7AdLMiZn4FzdGZNV2FpLWhPTkk) or, if the packages are incompatible, you can rebuild them for your distro version by yourself, using the deb sources there (soon will be ported here).
+**I. If you are using Debian, Ubuntu, or derivatives,** you can try installing the precompiled packages from my [Google Drive](https://drive.google.com/open?id=0B7AdLMiZn4FzdGZNV2FpLWhPTkk) or, if the packages are incompatible, you can rebuild them for your distro version by yourself, using the deb sources you can also found there (and soon will be ported here).
 
-**II. If you are an Arch Linux user, or if you are using one of the Arch Linux derivatives,** go to the project homepage or [in the original GitHub page](https://github.com/bohoomil/fontconfig-ultimate) for more informations.
+**II. If you are an Arch Linux user, or if you are using one of the Arch Linux derivatives,** go to the [project website](http://bohoomil.com) or [in the original GitHub page](https://github.com/bohoomil/fontconfig-ultimate) for more informations.
 
 **III. If you are using any other Linux distribution,** you can use all available resources you can found here or [in the original GitHub page](https://github.com/bohoomil/fontconfig-ultimate) to rebuild a modified `fontconfig` package, or making a new `fontconfig-infinality` that could work without modifying your distro's original `fontconfig` package.
 
