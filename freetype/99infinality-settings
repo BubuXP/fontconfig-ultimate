@@ -4,7 +4,7 @@
 #
 # These environment variables require that their respective patches
 # from http://bohoomil.com have been applied to the Freetype
-# installation you are using.  They will do abolutely nothing
+# installation you are using. They will do abolutely nothing
 # otherwise!
 #
 # This file should be copied to /etc/X11/Xsession.d/ for system-wide
@@ -43,7 +43,7 @@
 # It is still possible to read the following section "EXPLANATION OF
 # SETTINGS" and make your custom style by setting the variables.
 # Or you can use the other preconfigured styles in the "EXAMPLES"
-# section at the end (uncomment row 742 and set the style).
+# section at the end (uncomment line 742 and set the style).
 
 
 
