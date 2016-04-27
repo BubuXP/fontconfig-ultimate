@@ -11,16 +11,16 @@ has led to the following conventions in usage:
 
  Files begining with:	  Contain:
  
- 00 through 09		        Font directories
- 10 through 19		        system rendering defaults (AA, etc)
- 20 through 29		        font rendering options
- 30 through 39		        family substitution
- 40 through 49		        generic identification, map family->generic
- 50 through 59		        alternate config file loading
- 60 through 69		        generic aliases, map generic->family
- 70 through 79		        select font (adjust which fonts are available)
- 80 through 89		        match target="scan" (modify scanned patterns)
- 90 through 99		        font synthesis
+ 00 through 09          Font directories
+ 10 through 19          system rendering defaults (AA, etc)
+ 20 through 29          font rendering options
+ 30 through 39          family substitution
+ 40 through 49          generic identification, map family->generic
+ 50 through 59          alternate config file loading
+ 60 through 69          generic aliases, map generic->family
+ 70 through 79          select font (adjust which fonts are available)
+ 80 through 89          match target="scan" (modify scanned patterns)
+ 90 through 99          font synthesis
 
 Besides, there are more subdirectories located in the main template directory,
 each containing collection-specific fontconfig configuration files, that we
