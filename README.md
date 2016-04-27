@@ -35,7 +35,7 @@ New project website: [bohoomil.com](http://bohoomil.com)
 
 ___
 
-Differences with bohoomil's fontconfig-ultimate project (technical information):
+#### Differences with bohoomil's fontconfig-ultimate project (technical information):
 * Cairo: not much, only applying the patches to the Debian packages with the needed adjustments.
 * Freetype: not much, only applying the patches to the Debian package with the needed adjustments, and renaming `/etc/profile.d/infinality-settings.sh` to `/etc/X11/Xsession/99infinality-settings`.
 * Fontconfig: completely different approach. While `fontconfig-ultimate` is the whole fontconfig's ArchLinux package patched and rebuild to include bohoomil's custom configurations, my `fontconfig-infinality` Debian package has been projected to leave untouched the fontconfig's Debian packages. How I did this? Before a little explanation of how fontconfig works.
@@ -54,12 +54,11 @@ Differences with bohoomil's fontconfig-ultimate project (technical information):
    * remove symlink from `/usr/share/fontconfig/infinality.avail/29-local.conf` to stop using `/etc/fonts/local.conf` so, if already present, we'll preserve it from being removed or modified for use with Infinality. And because we can already customize settings in `/etc/fonts/infinality.avail/` and in user's home.
 
 
-TO DO:
+#### TO DO:
 * improve documentation.
 * making a script similar to `fc-presets` but for changing freetype's styles
 * include legacy fontconfig-infinality configs and presets, and mechanism to swap between legacy and ultimate config type.
 * porting `fc-presets` from bash to dash (Debian default) with better handling of `35-repl-custom.conf`.
-* modify fc-presets because 'combi/' is in another directory, different from the one where 'ms' and 'free' are.
 
 
 
