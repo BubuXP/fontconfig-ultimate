@@ -4,8 +4,9 @@
 
 #### Infinality font configuration files, patches, scripts and source packages for Debian and derivatives distros
 
-Original project website:
-New project website: [bohoomil.com](http://bohoomil.com "bohoomil.com")
+Original project website: [infinality.net](http://www.infinality.net/blog/infinality-freetype-patches/)
+
+New project website: [bohoomil.com](http://bohoomil.com)
 
 #### Quick installation instructions
 
