@@ -23,27 +23,47 @@
 # As of version 2.6.2, Infinality comes with the "ultimate3"
 # rendering style enabled internally ("hardcoded") by default.
 #
-# There are 7 preconfigured styles selectable by name, and they are:
+# There are many preconfigured styles selectable by name, and they are:
 #
-#            STYLE      DESCRIPTION
-#        ---------------------------------------------
-#          ultimate1  | extra sharp
-#          ultimate2  | sharper & lighter ultimate
-#          ultimate3  | well balanced (default if nothing set)
-#          ultimate4  | darker & smoother
-#          ultimate5  | darkest & heaviest ("MacIsh")
-#                osx  | Apple OS X
-#          windowsxp  | MS Windows XP
+#            osx - Simulate OSX rendering
+#           ipad - Simulate iPad rendering
+#         ubuntu - Simulate Ubuntu rendering
+#          linux - Generic "Linux" style - no snapping or certain other tweaks
+#      windowsxp - Simulate Windows XP rendering
+# windowsxplight - Simulate Windows XP rendering (lighter)
+#       windows7 - Simulate Windows 7 rendering with normal glyphs
+#  windows7light - Simulate Windows 7 rendering with lighter glyphs
+#        vanilla - Just subpixel hinting
 #
-# If you want to use a style from the list, uncomment the following
-# variable and change its value with one of the style's names.
+# INFINALITY STYLES:
+#        classic - Infinality rendering circa 2010.  No snapping.
+#          nudge - CLASSIC with lightly stem snapping and tweaks
+#           push - CLASSIC with medium stem snapping and tweaks
+#          shove - Full stem snapping and tweaks without sharpening
+#      sharpened - Full stem snapping, tweaks, and Windows-style sharpening
+#     infinality - Settings the original developer Infinality use
+#
+# BOHOOMIL STYLES:
+#      ultimate1 - extra sharp
+#      ultimate2 - sharper & lighter ultimate
+#      ultimate3 - well balanced (DEFAULT if nothing set)
+#      ultimate4 - darker & smoother
+#      ultimate5 - darkest & heaviest ("MacIsh")
+#
+#         custom - ??? not the same custom style at the end of this file
+#                      and cannot be customized because hardcoded
+#       disabled - No infinality enhancements (just subpixel hinting)
+#
+# If you want to use a style from the list above, set the desired one
+# by changing the value of the following variable with its name:
 
-#export INFINALITY_FT="ultimate2"
+export INFINALITY_FT="ultimate3"
 
 # It is still possible to read the following section "EXPLANATION OF
-# SETTINGS" and make your custom style by setting the variables.
-# Or you can use the other preconfigured styles in the "EXAMPLES"
-# section at the end (uncomment line 742 and set the style).
+# SETTINGS" and make your very personal style by setting the variables.
+# You can also use the above preconfigured styles as starting point
+# to make your own, as you can find the settings of the styles above
+# in the "EXAMPLES" section at the end of this file (line 731).
 
 
 
@@ -710,36 +730,69 @@ fi
 #################################################################
 ##########################   EXAMPLES   #########################
 #################################################################
-#
+# 
 # Set the USE_STYLE variable below to try each example.
 # Make sure to set your style in /etc/fonts/infinality.conf (file present in
 # legacy pre-bohoomil configurations) too.
 #
 # Possible options: 
-# 
-# DEFAULT      - Use above settings.  A compromise that should please most people.
-# OSX          - Simulate OSX rendering
-# IPAD         - Simulate iPad rendering
-# UBUNTU       - Simulate Ubuntu rendering
-# LINUX        - Generic "Linux" style - no snapping or certain other tweaks
-# WINDOWS      - Simulate Windows rendering
-# WINDOWS7     - Simulate Windows rendering with normal glyphs
-# WINDOWS7LIGHT- Simulate Windows 7 rendering with lighter glyphs
-# WINDOWS      - Simulate Windows rendering
-# VANILLA      - Just subpixel hinting
-# CUSTOM       - Your own choice.  See below
+#
+# DEFAULT      - Use above settings (but must be uncommented before).
+#                A compromise that should please most people.
+# REALCUSTOM   - Your own choice. See below.
+#
+
+#USE_STYLE="REALCUSTOM"
+
+
+################# REALCUSTOM STYLE #################
+if [ "$USE_STYLE" = "REALCUSTOM" ]; then
+
+export INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11"
+export INFINALITY_FT_GRAYSCALE_FILTER_STRENGTH=0
+export INFINALITY_FT_FRINGE_FILTER_STRENGTH=0
+export INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10
+export INFINALITY_FT_AUTOHINT_VERTICAL_STEM_DARKEN_STRENGTH=25
+export INFINALITY_FT_WINDOWS_STYLE_SHARPENING_STRENGTH=0
+export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH=0
+export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=100
+export INFINALITY_FT_STEM_FITTING_STRENGTH=100
+export INFINALITY_FT_GAMMA_CORRECTION="0 100"
+export INFINALITY_FT_BRIGHTNESS="0"
+export INFINALITY_FT_CONTRAST="0"
+export INFINALITY_FT_USE_VARIOUS_TWEAKS=true
+export INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=true
+export INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=100
+export INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=0
+export INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=true
+
+fi
+
+
+
+
+# The following styles are reported only as reference, because these
+# are hardcoded and you can set them at the beginning of this file.
+#
+# OSX            - Simulate OSX rendering
+# IPAD           - Simulate iPad rendering
+# UBUNTU         - Simulate Ubuntu rendering
+# LINUX          - Generic "Linux" style - no snapping or certain other tweaks
+# WINDOWSXPLIGHT - Simulate Windows XP rendering (lighter)
+# WINDOWS7LIGHT  - Simulate Windows 7 rendering with lighter glyphs
+# WINDOWSXP      - Simulate Windows XP rendering
+# WINDOWS7       - Simulate Windows rendering with normal glyphs
+# VANILLA        - Just subpixel hinting
 #
 # ----- Infinality styles -----
 # CLASSIC      - Infinality rendering circa 2010.  No snapping.
 # NUDGE        - CLASSIC with lightly stem snapping and tweaks
 # PUSH         - CLASSIC with medium stem snapping and tweaks
+# INFINALITY   - Settings I use
 # SHOVE        - Full stem snapping and tweaks without sharpening
 # SHARPENED    - Full stem snapping, tweaks, and Windows-style sharpening
-# INFINALITY   - Settings I use
 #
 # DISABLED     - Act as though running without the extra infinality enhancements (just subpixel hinting).
-
-#USE_STYLE="INFINALITY"
 
 
 
@@ -1135,29 +1188,5 @@ export INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=false
 export INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=
 export INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=
 export INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=false
-
-fi
-
-
-################# CUSTOM STYLE #################
-if [ "$USE_STYLE" = "CUSTOM" ]; then
-
-export INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11"
-export INFINALITY_FT_GRAYSCALE_FILTER_STRENGTH=0
-export INFINALITY_FT_FRINGE_FILTER_STRENGTH=0
-export INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10
-export INFINALITY_FT_AUTOHINT_VERTICAL_STEM_DARKEN_STRENGTH=25
-export INFINALITY_FT_WINDOWS_STYLE_SHARPENING_STRENGTH=0
-export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH=0
-export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=100
-export INFINALITY_FT_STEM_FITTING_STRENGTH=100
-export INFINALITY_FT_GAMMA_CORRECTION="0 100"
-export INFINALITY_FT_BRIGHTNESS="0"
-export INFINALITY_FT_CONTRAST="0"
-export INFINALITY_FT_USE_VARIOUS_TWEAKS=true
-export INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=true
-export INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=100
-export INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=0
-export INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=true
 
 fi
