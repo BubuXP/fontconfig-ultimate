@@ -59,7 +59,7 @@ ___
 * better handling of `35-repl-custom.conf` in `fc-presets` (needed?).
 * making a script similar to `fc-presets` but for changing freetype's styles.
 * include legacy fontconfig-infinality configs and presets, and mechanism to swap between legacy and ultimate config type.
-* Use of $FONTCONFIG_FILE variable to skip the need of dpkg-divert and also for simpler implementing the legacy and ultimate presets.
+* Use of `$FONTCONFIG_FILE` variable to skip the need of dpkg-divert and also for simpler implementing the legacy and ultimate presets.
 
 
 
